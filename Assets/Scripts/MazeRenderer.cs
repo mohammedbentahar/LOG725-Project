@@ -22,12 +22,6 @@ public class MazeRenderer : MonoBehaviour
     // Préfabriqué pour le sol
     [SerializeField] private Transform _floorPrefab = null;
 
-    // Préfabriqué pour les pièces
-    [SerializeField] private Transform _coinPrefab = null;
-
-    // Nombre de pièces à placer dans le labyrinthe
-    [SerializeField, Range(1, 20)] private int _coinCount = 5;
-
     /// <summary>
     /// Méthode appelée au démarrage du script
     /// </summary>
@@ -38,9 +32,6 @@ public class MazeRenderer : MonoBehaviour
 
         // Rendu du labyrinthe
         RenderMaze(maze);
-
-        // Placement des pièces dans le labyrinthe
-        PlaceCoins(maze);
     }
 
     /// <summary>
@@ -113,42 +104,6 @@ public class MazeRenderer : MonoBehaviour
             wall.position = position;
             wall.localScale = new Vector3(_cellSize, wall.localScale.y, wall.localScale.z);
             wall.eulerAngles = new Vector3(0, rotationY, 0);
-        }
-    }
-
-    /// <summary>
-    /// Méthode pour placer des pièces à des positions aléatoires dans le labyrinthe
-    /// </summary>
-    /// <param name="maze">Matrice représentant l'état des murs du labyrinthe</param>
-    private void PlaceCoins(WallState[,] maze)
-    {
-        if (_coinPrefab == null)
-        {
-            Debug.LogError("Coin Prefab is not assigned in the Inspector!");
-            return;
-        }
-
-        var rng = new System.Random();
-        var placedPositions = new HashSet<Vector3>();
-
-        for (int i = 0; i < _coinCount; ++i)
-        {
-            int x, z;
-            Vector3 position;
-
-            // Trouver une position unique
-            do
-            {
-                x = rng.Next(0, _width);
-                z = rng.Next(0, _height);
-                position = CalculateCellPosition(x, z);
-            } while (placedPositions.Contains(position));
-
-            placedPositions.Add(position);
-
-            // Instancier la pièce
-            Transform coin = Instantiate(_coinPrefab, transform);
-            coin.position = position + new Vector3(0, 0.5f, 0); // Déplacer légèrement au-dessus du sol
         }
     }
 }
