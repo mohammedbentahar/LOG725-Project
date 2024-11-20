@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Scripts\\MazeRenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\MazeRenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Scripts\\AudioController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\AudioController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MazeRenderer.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Scripts\\MazeRenderer.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MazeRenderer.cs",
-              "ToolTip": "C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Scripts\\MazeRenderer.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MazeRenderer.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAACIAAAA4AAAAAAAAAA==",
+              "Title": "AudioController.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Scripts\\AudioController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AudioController.cs",
+              "ToolTip": "C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Scripts\\AudioController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AudioController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T02:54:11.895Z",
+              "WhenOpened": "2024-11-20T06:41:24.617Z",
               "EditorCaption": ""
             }
           ]
