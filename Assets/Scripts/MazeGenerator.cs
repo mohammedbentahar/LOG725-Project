@@ -183,4 +183,35 @@ public static class MazeGenerator
 
         return ApplyRecursiveBacktracker(maze, width, height);
     }
+
+
+    /// <summary>
+    /// Trouve la cellule la plus éloignée de la position de départ (0, 0)
+    /// </summary>
+    /// <param name="maze">La matrice représentant le labyrinthe</param>
+    /// <param name="width">Largeur du labyrinthe</param>
+    /// <param name="height">Hauteur du labyrinthe</param>
+    /// <returns>La position de la cellule la plus éloignée</returns>
+    public static Position FindFarthestPosition(WallState[,] maze, int width, int height)
+    {
+        Position farthestPosition = new Position { X = 0, Y = 0 };
+        float maxDistance = 0;
+
+        for (int x = 0; x < width; ++x)
+        {
+            for (int y = 0; y < height; ++y)
+            {
+                float distance = Vector2.Distance(new Vector2(0, 0), new Vector2(x, y));
+                if (distance > maxDistance)
+                {
+                    maxDistance = distance;
+                    farthestPosition = new Position { X = x, Y = y };
+                }
+            }
+        }
+
+        return farthestPosition;
+    }
+
+
 }
