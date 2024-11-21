@@ -26,10 +26,11 @@ public class MazeRenderer : MonoBehaviour
     private void Start()
     {
         WallState[,] maze = MazeGenerator.Generate(_width, _height);
-        RenderMaze(maze);
+        PlaceExit(maze);    // Placer la sortie avant de rendre le labyrinthe
+        RenderMaze(maze);   // Rendre le labyrinthe après avoir placé la sortie
         PlaceCoins(maze);
-        PlaceExit(maze);
     }
+
 
     /// <summary>
     /// Méthode responsable du rendu du labyrinthe
@@ -125,7 +126,7 @@ public class MazeRenderer : MonoBehaviour
     }
 
     /// <summary>
-    /// Place la sortie dans la position la plus éloignée et retire un mur à cet endroit
+    /// Place the exit at the farthest edge position and remove the corresponding wall.
     /// </summary>
     private void PlaceExit(WallState[,] maze)
     {
@@ -135,53 +136,45 @@ public class MazeRenderer : MonoBehaviour
             return;
         }
 
-        float maxDistance = 0f;
-        Position farthestCell = new Position { X = 0, Y = 0 };
+        // Trouver la position la plus éloignée sur le bord
+        Position farthestCell = MazeGenerator.FindFarthestEdgePosition(maze, _width, _height);
 
-        for (int x = 0; x < _width; ++x)
-        {
-            for (int z = 0; z < _height; ++z)
-            {
-                float distance = Vector2.Distance(new Vector2(0, 0), new Vector2(x, z));
-                if (distance > maxDistance)
-                {
-                    maxDistance = distance;
-                    farthestCell = new Position { X = x, Y = z };
-                }
-            }
-        }
-
+        // Calculer la position en coordonnées du monde
         Vector3 exitPosition = CalculateCellPosition(farthestCell.X, farthestCell.Y);
         Quaternion exitRotation = Quaternion.identity;
 
-        if (farthestCell.X == _width - 1)
+        // Ajuster le mur et la position pour la sortie
+        if (farthestCell.X == _width - 1) // Bord droit
         {
             maze[farthestCell.X, farthestCell.Y] &= ~WallState.RIGHT;
             exitPosition += new Vector3(_cellSize / 2, 0, 0);
             exitRotation = Quaternion.Euler(0, 90, 0);
         }
-        else if (farthestCell.Y == 0)
+        else if (farthestCell.Y == 0) // Bord bas
         {
             maze[farthestCell.X, farthestCell.Y] &= ~WallState.DOWN;
             exitPosition += new Vector3(0, 0, -_cellSize / 2);
-            exitRotation = Quaternion.Euler(0, 0, 0);
         }
-        else if (farthestCell.X == 0)
+        else if (farthestCell.X == 0) // Bord gauche
         {
             maze[farthestCell.X, farthestCell.Y] &= ~WallState.LEFT;
             exitPosition += new Vector3(-_cellSize / 2, 0, 0);
             exitRotation = Quaternion.Euler(0, 90, 0);
         }
-        else if (farthestCell.Y == _height - 1)
+        else if (farthestCell.Y == _height - 1) // Bord haut
         {
             maze[farthestCell.X, farthestCell.Y] &= ~WallState.UP;
             exitPosition += new Vector3(0, 0, _cellSize / 2);
-            exitRotation = Quaternion.Euler(0, 0, 0);
         }
 
         _exitPosition = exitPosition;
         Instantiate(_exitPrefab, _exitPosition + new Vector3(0, 0.5f, 0), exitRotation);
+
+        Debug.Log($"Sortie placée en : {farthestCell.X}, {farthestCell.Y}");
     }
+
+
+
 
     /// <summary>
     /// Vérifie si le joueur atteint la sortie

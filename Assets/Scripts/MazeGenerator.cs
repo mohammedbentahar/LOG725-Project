@@ -186,32 +186,75 @@ public static class MazeGenerator
 
 
     /// <summary>
-    /// Trouve la cellule la plus éloignée de la position de départ (0, 0)
+    /// Finds the farthest edge position from the starting point (0, 0) using BFS.
     /// </summary>
-    /// <param name="maze">La matrice représentant le labyrinthe</param>
-    /// <param name="width">Largeur du labyrinthe</param>
-    /// <param name="height">Hauteur du labyrinthe</param>
-    /// <returns>La position de la cellule la plus éloignée</returns>
-    public static Position FindFarthestPosition(WallState[,] maze, int width, int height)
+    /// <param name="maze">Maze matrix</param>
+    /// <param name="width">Maze width</param>
+    /// <param name="height">Maze height</param>
+    /// <returns>Position of the farthest edge cell</returns>
+    public static Position FindFarthestEdgePosition(WallState[,] maze, int width, int height)
     {
         Position farthestPosition = new Position { X = 0, Y = 0 };
-        float maxDistance = 0;
+        int maxDistance = 0;
 
-        for (int x = 0; x < width; ++x)
+        // BFS queue to track cells and their distances
+        Queue<(Position, int)> queue = new Queue<(Position, int)>();
+        queue.Enqueue((new Position { X = 0, Y = 0 }, 0)); // Start from (0, 0)
+
+        // HashSet to track visited cells
+        HashSet<(int, int)> visited = new HashSet<(int, int)>();
+        visited.Add((0, 0));
+
+        // Directions for neighbor traversal (UP, DOWN, LEFT, RIGHT)
+        int[] dx = { 0, 0, -1, 1 };
+        int[] dy = { 1, -1, 0, 0 };
+        WallState[] walls = { WallState.UP, WallState.DOWN, WallState.LEFT, WallState.RIGHT };
+
+        while (queue.Count > 0)
         {
-            for (int y = 0; y < height; ++y)
+            var (current, distance) = queue.Dequeue();
+
+            // Update farthest position if a longer distance is found and it's on the edge
+            if (distance > maxDistance && IsEdgeCell(current, width, height))
             {
-                float distance = Vector2.Distance(new Vector2(0, 0), new Vector2(x, y));
-                if (distance > maxDistance)
+                maxDistance = distance;
+                farthestPosition = current;
+            }
+
+            // Explore neighbors
+            for (int i = 0; i < 4; i++)
+            {
+                int nx = current.X + dx[i];
+                int ny = current.Y + dy[i];
+
+                // Ensure neighbor is within bounds, not visited, and accessible
+                if (nx >= 0 && nx < width && ny >= 0 && ny < height &&
+                    !visited.Contains((nx, ny)) &&
+                    !maze[current.X, current.Y].HasFlag(walls[i]))
                 {
-                    maxDistance = distance;
-                    farthestPosition = new Position { X = x, Y = y };
+                    visited.Add((nx, ny));
+                    queue.Enqueue((new Position { X = nx, Y = ny }, distance + 1));
                 }
             }
         }
 
         return farthestPosition;
     }
+
+    /// <summary>
+    /// Checks if a cell is on the edge of the maze.
+    /// </summary>
+    /// <param name="pos">Cell position</param>
+    /// <param name="width">Maze width</param>
+    /// <param name="height">Maze height</param>
+    /// <returns>True if the cell is on the edge, otherwise false</returns>
+    private static bool IsEdgeCell(Position pos, int width, int height)
+    {
+        return pos.X == 0 || pos.X == width - 1 || pos.Y == 0 || pos.Y == height - 1;
+    }
+
+
+
 
 
 }
