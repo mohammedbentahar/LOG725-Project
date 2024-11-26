@@ -410,6 +410,8 @@ MonoBehaviour:
   _coinPrefab: {fileID: 400000, guid: d4f882aee3af7124b8106d53af2c2e8b, type: 3}
   _exitPrefab: {fileID: 3495958046185666090, guid: 4d14c08ab47453b48aaf685b997f9ea9,
     type: 3}
+  _lineRendererPrefab: {fileID: 6846498183013004897, guid: e250bd69e9ccfcb45b70f876d4dad150,
+    type: 3}
   _coinCount: 1
 --- !u!4 &1554107182
 Transform:

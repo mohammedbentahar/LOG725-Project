@@ -254,6 +254,68 @@ public static class MazeGenerator
     }
 
 
+    /// <summary>
+    /// Calcule le chemin le plus court entre deux positions dans le labyrinthe en utilisant BFS.
+    /// </summary>
+    /// <param name="maze">Matrice représentant le labyrinthe</param>
+    /// <param name="start">Position de départ</param>
+    /// <param name="end">Position d'arrivée</param>
+    /// <param name="width">Largeur du labyrinthe</param>
+    /// <param name="height">Hauteur du labyrinthe</param>
+    /// <returns>Liste des positions formant le chemin le plus court</returns>
+    public static List<Position> CalculateShortestPath(WallState[,] maze, Position start, Position end, int width, int height)
+    {
+        // Validate start and end positions
+        if (start.X < 0 || start.X >= width || start.Y < 0 || start.Y >= height ||
+            end.X < 0 || end.X >= width || end.Y < 0 || end.Y >= height)
+        {
+            Debug.LogError($"Invalid start ({start.X}, {start.Y}) or end ({end.X}, {end.Y}) position.");
+            return null;
+        }
+
+        // BFS queue
+        Queue<(Position, List<Position>)> queue = new Queue<(Position, List<Position>)>();
+        queue.Enqueue((start, new List<Position> { start }));
+        HashSet<(int, int)> visited = new HashSet<(int, int)>();
+        visited.Add((start.X, start.Y));
+
+        int[] dx = { 0, 0, -1, 1 };
+        int[] dy = { 1, -1, 0, 0 };
+        WallState[] walls = { WallState.UP, WallState.DOWN, WallState.LEFT, WallState.RIGHT };
+
+        while (queue.Count > 0)
+        {
+            var (current, path) = queue.Dequeue();
+
+            // Check if we've reached the end
+            if (current.X == end.X && current.Y == end.Y)
+            {
+                return path;
+            }
+
+            // Explore neighbors
+            for (int i = 0; i < 4; i++)
+            {
+                int nx = current.X + dx[i];
+                int ny = current.Y + dy[i];
+
+                if (nx >= 0 && nx < width && ny >= 0 && ny < height &&
+                    !visited.Contains((nx, ny)) &&
+                    !maze[current.X, current.Y].HasFlag(walls[i]))
+                {
+                    visited.Add((nx, ny));
+                    var newPath = new List<Position>(path) { new Position { X = nx, Y = ny } };
+                    queue.Enqueue((new Position { X = nx, Y = ny }, newPath));
+                }
+            }
+        }
+
+        Debug.LogError("No path found.");
+        return null;
+    }
+
+
+
 
 
 
