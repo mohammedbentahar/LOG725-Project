@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Classe responsable du rendu du labyrinthe
@@ -261,5 +262,7 @@ public class MazeRenderer : MonoBehaviour
     private void EndGame()
     {
         Debug.Log("Félicitations ! Vous avez atteint la sortie !");
+        SceneManager.LoadScene("EndGame"); // Replace with your endgame scene name
     }
+
 }
