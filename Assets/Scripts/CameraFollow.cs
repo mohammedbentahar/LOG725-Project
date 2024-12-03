@@ -7,7 +7,7 @@ public class CameraFollow : MonoBehaviour
     public float height = 1.0f;  // Height of the camera relative to the player
     public float rotationSpeed = 5.0f;  // Speed at which the camera rotates around the player
 
-    private float currentRotationAngle = 45f;  // Current rotation around the player
+    private float currentRotationAngle = 180f;  // Current rotation around the player
 
     void Update()
     {
