@@ -31,6 +31,23 @@ public class MazeRenderer : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        // Récupère la difficulté sélectionnée
+        int difficulty = DifficultyManager.SelectedDifficulty;
+
+        // Ajuste les dimensions du labyrinthe
+        switch (difficulty)
+        {
+            case 0: // Débutant
+                SetMazeSize(10, 10);
+                break;
+            case 1: // Intermédiaire
+                SetMazeSize(20, 20);
+                break;
+            case 2: // Avancé
+                SetMazeSize(30, 30);
+                break;
+        }
+
         _player = GameObject.FindWithTag("Player")?.transform;
 
         WallState[,] maze = MazeGenerator.Generate(_width, _height);
@@ -264,5 +281,12 @@ public class MazeRenderer : MonoBehaviour
         Debug.Log("Félicitations ! Vous avez atteint la sortie !");
         SceneManager.LoadScene("EndGame"); // Replace with your endgame scene name
     }
+
+    public void SetMazeSize(int width, int height)
+    {
+        _width = width;
+        _height = height;
+    }
+
 
 }
