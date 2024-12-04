@@ -1,10 +1,20 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class PauseMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenuUI; // Assign in the Inspector
     private bool isPaused = false;
+
+    // Define a structure to hold game state
+    [System.Serializable]
+    public class GameState
+    {
+        public Vector3 playerPosition;
+        public int currentSceneIndex;
+        // Add other variables like maze state, score, etc., as needed
+    }
 
     void Update()
     {
@@ -49,12 +59,23 @@ public class PauseMenuManager : MonoBehaviour
         }
     }
 
-
     public void SaveGame()
     {
-        Debug.Log("Game Saved! (Implement save logic here)");
-        // Add save logic here
+        // Create a new game state object
+        GameState state = new GameState();
+        state.playerPosition = GameObject.FindWithTag("Player").transform.position;
+        state.currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        // Serialize the game state to JSON
+        string json = JsonUtility.ToJson(state);
+
+        // Save the JSON string to a file
+        string path = Application.persistentDataPath + "/savegame.json";
+        File.WriteAllText(path, json);
+
+        Debug.Log("Game Saved! Path: " + path);
     }
+
 
     public void ReturnToMainMenu()
     {
