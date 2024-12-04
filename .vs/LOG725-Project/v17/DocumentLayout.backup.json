@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Standard Assets\\Characters\\ThirdPersonCharacter\\Scripts\\ThirdPersonCharacter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Standard Assets\\Characters\\ThirdPersonCharacter\\Scripts\\ThirdPersonCharacter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Scripts\\MazeGenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\MazeGenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Standard Assets\\Characters\\ThirdPersonCharacter\\Scripts\\ThirdPersonUserControl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Standard Assets\\Characters\\ThirdPersonCharacter\\Scripts\\ThirdPersonUserControl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Scripts\\MazeRenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\MazeRenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Scripts\\FirstPersonCamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\FirstPersonCamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ThirdPersonCharacter.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Standard Assets\\Characters\\ThirdPersonCharacter\\Scripts\\ThirdPersonCharacter.cs",
-              "RelativeDocumentMoniker": "Assets\\Standard Assets\\Characters\\ThirdPersonCharacter\\Scripts\\ThirdPersonCharacter.cs",
-              "ToolTip": "C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Standard Assets\\Characters\\ThirdPersonCharacter\\Scripts\\ThirdPersonCharacter.cs",
-              "RelativeToolTip": "Assets\\Standard Assets\\Characters\\ThirdPersonCharacter\\Scripts\\ThirdPersonCharacter.cs",
-              "ViewState": "AgIAAJwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "MazeGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Scripts\\MazeGenerator.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MazeGenerator.cs",
+              "ToolTip": "C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Scripts\\MazeGenerator.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MazeGenerator.cs",
+              "ViewState": "AgIAALcAAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T22:31:22.422Z",
+              "WhenOpened": "2024-12-03T05:20:44.437Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ThirdPersonUserControl.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Standard Assets\\Characters\\ThirdPersonCharacter\\Scripts\\ThirdPersonUserControl.cs",
-              "RelativeDocumentMoniker": "Assets\\Standard Assets\\Characters\\ThirdPersonCharacter\\Scripts\\ThirdPersonUserControl.cs",
-              "ToolTip": "C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Standard Assets\\Characters\\ThirdPersonCharacter\\Scripts\\ThirdPersonUserControl.cs",
-              "RelativeToolTip": "Assets\\Standard Assets\\Characters\\ThirdPersonCharacter\\Scripts\\ThirdPersonUserControl.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAmwDkAAAAWAAAAAAAAAA==",
+              "Title": "MazeRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Scripts\\MazeRenderer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MazeRenderer.cs",
+              "ToolTip": "C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Scripts\\MazeRenderer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MazeRenderer.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAmwGoAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T22:30:51.968Z",
+              "WhenOpened": "2024-12-03T05:20:01.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FirstPersonCamera.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Scripts\\FirstPersonCamera.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\FirstPersonCamera.cs",
+              "ToolTip": "C:\\Users\\moham\\OneDrive - ETS\\Documents\\ets\\LOG725  Ing\u00E9nierie et conception de jeux vid\u00E9o\\LOG725-Project\\Assets\\Scripts\\FirstPersonCamera.cs",
+              "RelativeToolTip": "Assets\\Scripts\\FirstPersonCamera.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAgwCsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T04:16:16.044Z",
               "EditorCaption": ""
             }
           ]
